@@ -38,6 +38,8 @@
     "skipCommitHook": true,
     "jwtSecretKey": "ZTY5MjFiNTQxYTk3NGFhNjlhNTJlZDIwZmE1ZDhkYWYxYmUyYTdjMmNlN2NlNzgxNzFhOTBlY2Q1ZmJlOTFjYTIwZDk2ZWE1MDEyY2RlODIyNjY5NzVhMjRmMzdjNDU3YjU4Nzk4ZWVlYTAxYjZmOTVmYzMxMDU1MWJjZWNmY2Y=",
     "languages": ["en"],
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["Notification"],
+    "lastLiquibaseTimestamp": 1641415386000
   }
 }

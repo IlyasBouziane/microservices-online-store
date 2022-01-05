@@ -1,0 +1,329 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-product-heading"
+        data-cy="ProductCreateUpdateHeading"
+        jhiTranslate="gatewayApp.productorderProduct.home.createOrEditLabel"
+      >
+        Create or edit a Product
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.sku" for="field_sku">Sku</label>
+          <input type="text" class="form-control" name="sku" id="field_sku" data-cy="sku" formControlName="sku" />
+          <div *ngIf="editForm.get('sku')!.invalid && (editForm.get('sku')!.dirty || editForm.get('sku')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('sku')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.upc" for="field_upc">Upc</label>
+          <input type="text" class="form-control" name="upc" id="field_upc" data-cy="upc" formControlName="upc" />
+          <div *ngIf="editForm.get('upc')!.invalid && (editForm.get('upc')!.dirty || editForm.get('upc')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('upc')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.description" for="field_description"
+            >Description</label
+          >
+          <textarea
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.price" for="field_price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+          <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('price')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+            >
+              This field should be at least 0.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.productSize" for="field_productSize"
+            >Product Size</label
+          >
+          <select class="form-control" name="productSize" formControlName="productSize" id="field_productSize" data-cy="productSize">
+            <option [ngValue]="null">{{ 'gatewayApp.ProductSize.null' | translate }}</option>
+            <option *ngFor="let productSize of productSizeValues" [value]="productSize">
+              {{ 'gatewayApp.ProductSize.' + productSize | translate }}
+            </option>
+          </select>
+          <div *ngIf="editForm.get('productSize')!.invalid && (editForm.get('productSize')!.dirty || editForm.get('productSize')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('productSize')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.colors" for="field_colors">Colors</label>
+          <input type="text" class="form-control" name="colors" id="field_colors" data-cy="colors" formControlName="colors" />
+          <div *ngIf="editForm.get('colors')!.invalid && (editForm.get('colors')!.dirty || editForm.get('colors')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('colors')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Colors' }"
+            >
+              This field should follow pattern for "Colors".
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="gatewayApp.productorderProduct.image"
+            for="field_image"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.image' | translate"
+            >Image</label
+          >
+          <div>
+            <img
+              [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('image')!.value"
+              alt="product image"
+            />
+            <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('image', 'imageContentType', 'file_image')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_image"
+              data-cy="image"
+              (change)="setFileData($event, 'image', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="image" id="field_image" data-cy="image" formControlName="image" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageContentType"
+            id="field_imageContentType"
+            formControlName="imageContentType"
+          />
+          <div *ngIf="editForm.get('image')!.invalid && (editForm.get('image')!.dirty || editForm.get('image')!.touched)"></div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="gatewayApp.productorderProduct.imageSha1"
+            for="field_imageSha1"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.imageSha1' | translate"
+            >Image Sha 1</label
+          >
+          <input type="text" class="form-control" name="imageSha1" id="field_imageSha1" data-cy="imageSha1" formControlName="imageSha1" />
+          <div *ngIf="editForm.get('imageSha1')!.invalid && (editForm.get('imageSha1')!.dirty || editForm.get('imageSha1')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('imageSha1')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 40 }"
+            >
+              This field is required to be at least 40 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('imageSha1')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 40 }"
+            >
+              This field cannot be longer than 40 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('imageSha1')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Image Sha 1' }"
+            >
+              This field should follow pattern for "Image Sha 1".
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="gatewayApp.productorderProduct.imageCdnUrl"
+            for="field_imageCdnUrl"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.imageCdnUrl' | translate"
+            >Image Cdn Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="imageCdnUrl"
+            id="field_imageCdnUrl"
+            data-cy="imageCdnUrl"
+            formControlName="imageCdnUrl"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="gatewayApp.productorderProduct.thumbnailSha1"
+            for="field_thumbnailSha1"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.thumbnailSha1' | translate"
+            >Thumbnail Sha 1</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="thumbnailSha1"
+            id="field_thumbnailSha1"
+            data-cy="thumbnailSha1"
+            formControlName="thumbnailSha1"
+          />
+          <div
+            *ngIf="
+              editForm.get('thumbnailSha1')!.invalid && (editForm.get('thumbnailSha1')!.dirty || editForm.get('thumbnailSha1')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('thumbnailSha1')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 40 }"
+            >
+              This field is required to be at least 40 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('thumbnailSha1')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 40 }"
+            >
+              This field cannot be longer than 40 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('thumbnailSha1')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Thumbnail Sha 1' }"
+            >
+              This field should follow pattern for "Thumbnail Sha 1".
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="gatewayApp.productorderProduct.thumbnailCdnUrl"
+            for="field_thumbnailCdnUrl"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.thumbnailCdnUrl' | translate"
+            >Thumbnail Cdn Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="thumbnailCdnUrl"
+            id="field_thumbnailCdnUrl"
+            data-cy="thumbnailCdnUrl"
+            formControlName="thumbnailCdnUrl"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="gatewayApp.productorderProduct.productCategory" for="field_productCategory"
+            >Product Category</label
+          >
+          <select
+            class="form-control"
+            id="field_productCategory"
+            data-cy="productCategory"
+            name="productCategory"
+            formControlName="productCategory"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                productCategoryOption.id === editForm.get('productCategory')!.value?.id
+                  ? editForm.get('productCategory')!.value
+                  : productCategoryOption
+              "
+              *ngFor="let productCategoryOption of productCategoriesSharedCollection; trackBy: trackProductCategoryById"
+            >
+              {{ productCategoryOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

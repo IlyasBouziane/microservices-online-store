@@ -38,6 +38,8 @@
     "skipCommitHook": true,
     "jwtSecretKey": "MzhmZWZiNDQwNTFkNjY5NjE4MmNhNGZlNWJhMGVkNmEyYThjZDRjN2RjOTg5ZGU5ZjZmZmE5ZWE0ZGJkNDRlNzVmMDUyYzhhY2M2ZWZmNWRkYmQzNzg4ZjdjODk3ZDM3Yzk1NmE2MzdkNjQ0NjUxYTBjMmMyMDgzZDI3MzZkYTA=",
     "languages": ["en"],
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["Invoice", "Shipment"],
+    "lastLiquibaseTimestamp": 1641414603000
   }
 }

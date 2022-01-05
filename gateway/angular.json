@@ -108,6 +108,7 @@
   },
   "defaultProject": "gateway",
   "cli": {
+    "analytics": false,
     "packageManager": "npm"
   }
 }

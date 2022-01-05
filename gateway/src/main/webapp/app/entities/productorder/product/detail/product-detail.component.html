@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="product">
+      <h2 data-cy="productDetailsHeading"><span jhiTranslate="gatewayApp.productorderProduct.detail.title">Product</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ product.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.sku">Sku</span></dt>
+        <dd>
+          <span>{{ product.sku }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.upc">Upc</span></dt>
+        <dd>
+          <span>{{ product.upc }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.name">Name</span></dt>
+        <dd>
+          <span>{{ product.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.description">Description</span></dt>
+        <dd>
+          <span>{{ product.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.price">Price</span></dt>
+        <dd>
+          <span>{{ product.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.productSize">Product Size</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gatewayApp.ProductSize.' + product.productSize }}">{{ product.productSize }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.colors">Colors</span></dt>
+        <dd>
+          <span>{{ product.colors }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="gatewayApp.productorderProduct.image" [ngbTooltip]="'gatewayApp.productorderProduct.help.image' | translate"
+            >Image</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="product.image">
+            <a (click)="openFile(product.image, product.imageContentType)">
+              <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-width: 100%" alt="product image" />
+            </a>
+            {{ product.imageContentType }}, {{ byteSize(product.image) }}
+          </div>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="gatewayApp.productorderProduct.imageSha1"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.imageSha1' | translate"
+            >Image Sha 1</span
+          >
+        </dt>
+        <dd>
+          <span>{{ product.imageSha1 }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="gatewayApp.productorderProduct.imageCdnUrl"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.imageCdnUrl' | translate"
+            >Image Cdn Url</span
+          >
+        </dt>
+        <dd>
+          <span>{{ product.imageCdnUrl }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="gatewayApp.productorderProduct.thumbnailSha1"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.thumbnailSha1' | translate"
+            >Thumbnail Sha 1</span
+          >
+        </dt>
+        <dd>
+          <span>{{ product.thumbnailSha1 }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="gatewayApp.productorderProduct.thumbnailCdnUrl"
+            [ngbTooltip]="'gatewayApp.productorderProduct.help.thumbnailCdnUrl' | translate"
+            >Thumbnail Cdn Url</span
+          >
+        </dt>
+        <dd>
+          <span>{{ product.thumbnailCdnUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="gatewayApp.productorderProduct.productCategory">Product Category</span></dt>
+        <dd>
+          <div *ngIf="product.productCategory">
+            <a [routerLink]="['/product-category', product.productCategory?.id, 'view']">{{ product.productCategory?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
