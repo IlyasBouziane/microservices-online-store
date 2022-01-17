@@ -1,0 +1,18 @@
+{
+  "simulation": "BasicSimulation",
+  "simulationId": "basicsimulation",
+  "start": 1642455776179,
+  "description": "",
+  "scenarios": ["BasicSimulation"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "count of failed requests",
+  "condition": "is",
+  "expectedValues": [0.0],
+  "result": true,
+  "message": "Global: count of failed requests is 0.0",
+  "actualValue": [0.0]
+}
+  ]
+}

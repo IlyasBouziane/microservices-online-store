@@ -1,0 +1,21 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: microservices-online-store/gateway
+      context: ../gateway
+      jib: {}
+    - image: microservices-online-store/invoice
+      context: ../invoice
+      jib: {}
+    - image: microservices-online-store/notification
+      context: ../notification
+      jib: {}
+    - image: microservices-online-store/productorder
+      context: ../productorder
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:latest"
+deploy:
+  kustomize: {}

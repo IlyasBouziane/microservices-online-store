@@ -1,0 +1,17 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["gateway", "invoice", "notification", "productorder"],
+    "directoryPath": "../",
+    "clusteredDbApps": ["notification"],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "YzJkNTFjMjJlMzRlY2ZhNzE3YmI4YzY3NmEzNmFmZmJlOWEwYWEyYzBmNzk5YWQxYmVlNmRjOWFjMTU3YmQxNTQxZmJiNTJiNzRlMWJhYjY0NzRmYmJiMWEwZTA1M2EwMDc5Mw==",
+    "dockerRepositoryName": "microservices-online-store",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "store",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesUseDynamicStorage": false,
+    "ingressDomain": "",
+    "monitoring": "prometheus",
+    "istio": false
+  }
+}
