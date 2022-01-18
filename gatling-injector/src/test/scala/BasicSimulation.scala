@@ -7,13 +7,13 @@ import scala.language.postfixOps
 class BasicSimulation extends Simulation {
 
   // params
-  val baseUrl = sys.env.getOrElse("GATLING_BASEURL", "http://computer-database.gatling.io").toString
+  // baseurl = url to the gateway
+  val baseUrl = sys.env.getOrElse("GATLING_BASEURL", "http://34.77.2.19:8080/").toString
   val users = sys.env.getOrElse("GATLING_NR_USERS", "10").toInt
   val duration: FiniteDuration = sys.env.getOrElse("GATLING_MAX_DURATION", "2").toInt minutes
-  val rampUpTime: FiniteDuration = sys.env.getOrElse("GATLING_RAMPUP_TIME", "30").toInt seconds
 
   val httpProtocol = http
-    .baseUrl("http://computer-database.gatling.io")
+    .baseUrl("http://34.77.2.19:8080/")
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     .doNotTrackHeader("1")
     .acceptLanguageHeader("en-US,en;q=0.5")
@@ -26,7 +26,7 @@ class BasicSimulation extends Simulation {
     .pause(5)
 
   setUp(
-    basicScenario.inject(constantUsersPerSec(0.2) during duration)).protocols(httpProtocol)
+    basicScenario.inject(constantUsersPerSec(10) during duration)).protocols(httpProtocol)
     .assertions(
       global.failedRequests.count.is(0)
     )
