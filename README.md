@@ -25,7 +25,7 @@ This application is a basic app for an online store built in a microservices arc
 
 ## Built With
 
-* [Jhiptser](https://www.jhipster.tech/) : a free and open-source application generator.
+* [Jhipster](https://www.jhipster.tech/) : a free and open-source application generator.
 * [Google Cloud Plateform](https://cloud.google.com/) : the Cloud plateform where the app was deployed
 * [Kubernetes](https://kubernetes.io/)
 * [Gatling](https://gatling.io/) : a load injector used to test the autoscaling 
