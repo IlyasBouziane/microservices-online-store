@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b9ede62-81a8-428b-8d79-edb20aa6d022" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/BasicSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/BasicSimulation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/all_sessions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/assertions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/assertions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/gatling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/global_stats.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/highcharts-more.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/highstock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/stats.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/stats.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/js/unpack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/req_request-1-46da4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/req_request-1-redir-7e85b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/simulation.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/arrow_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/arrow_down_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/arrow_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/arrow_right_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/cible.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/fond-degrade.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/fond-lueur.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/little_arrow_right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/logo-gatling.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/sortable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/sorted-down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/sorted-up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/stat-fleche-bas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/stat-fond.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/stat-l-roue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/stat-l-temps.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gatling/basicsimulation-20220117214256179/style/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/inc_compile.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/inc_compile.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BasicSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BasicSimulation.class" afterDir="false" />
-    </list>
+    <list default="true" id="8b9ede62-81a8-428b-8d79-edb20aa6d022" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +61,7 @@
       <updated>1642452018115</updated>
       <workItem from="1642452032707" duration="948000" />
       <workItem from="1642453582585" duration="5030000" />
-      <workItem from="1642503430054" duration="325000" />
+      <workItem from="1642503430054" duration="561000" />
     </task>
     <servers />
   </component>
